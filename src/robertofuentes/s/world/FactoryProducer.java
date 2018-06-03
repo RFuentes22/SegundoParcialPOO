@@ -9,10 +9,6 @@ package robertofuentes.s.world;
  *
  * @author R.Fuentes
  */
-public class RobertoFuentesSWorld {
-  
-    public static void main(String[] args) {
-       
-    }
+public class FactoryProducer {
     
 }
