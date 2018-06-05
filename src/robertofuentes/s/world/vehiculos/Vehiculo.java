@@ -9,6 +9,6 @@ package robertofuentes.s.world.vehiculos;
  *
  * @author R.Fuentes
  */
-public class Vehiculo {
-    
+public interface Vehiculo {
+    void moverse();
 }
