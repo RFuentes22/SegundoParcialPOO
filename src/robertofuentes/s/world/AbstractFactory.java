@@ -5,10 +5,17 @@
  */
 package robertofuentes.s.world;
 
+import robertofuentes.s.world.FactoryElfos.Elfos;
+import robertofuentes.s.world.FactoryOrcos.Orcos;
+import robertofuentes.s.world.FactoryZombies.Zombies;
+
 /**
  *
  * @author R.Fuentes
  */
-public class AbstractFactory {
+public interface AbstractFactory {
+    Orcos getOrcos(String type);
+    Elfos getElfos(String type);
+    Zombies getZombies(String type);
     
 }
