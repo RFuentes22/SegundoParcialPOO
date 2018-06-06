@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package robertofuentes.s.world.razas;
+package robertofuentes.s.world.Centro_Mando;
 
 /**
  *
  * @author R.Fuentes
  */
-public class FactoryRaza {
-    
+public class Cmando_Orcos implements Cmando {
+    @Override
+    public void AlmacenarRecursos() {
+        System.out.println("Centro de mando orcos");
+    }
 }
+

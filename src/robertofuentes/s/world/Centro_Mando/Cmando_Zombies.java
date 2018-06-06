@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package robertofuentes.s.world.edificacion;
+package robertofuentes.s.world.Centro_Mando;
 
 /**
  *
  * @author R.Fuentes
  */
-public class Recolect_tipo1 {
-    
+public class Cmando_Zombies implements Cmando {
+    @Override
+    public void AlmacenarRecursos() {
+        System.out.println("Centro de mando zombies");
+    }
 }

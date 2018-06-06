@@ -9,6 +9,6 @@ package robertofuentes.s.world.edificacion;
  *
  * @author R.Fuentes
  */
-public class BuildVe_tipo1 {
+public class EntrenarUnidades {
     
 }

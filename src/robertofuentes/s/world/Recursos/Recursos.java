@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package robertofuentes.s.world.milicia;
+package robertofuentes.s.world.Recursos;
 
 /**
  *
  * @author R.Fuentes
  */
-public class Milicia {
-    
+public interface Recursos {
+    void Recolectar();
+    void Generar();
 }

@@ -9,6 +9,9 @@ package robertofuentes.s.world.vehiculos;
  *
  * @author R.Fuentes
  */
-public class vehiculo1 {
-    
+public class VehiculoOrcosT1 implements Vehiculo{
+    @Override
+    public void moverse() {
+        System.out.println("Vehiculo de orcos tipo 1");
+    }
 }

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package robertofuentes.s.world.edificacion;
+package robertofuentes.s.world.Centro_Mando;
 
 /**
  *
  * @author R.Fuentes
  */
-public class Cmando_Raza1 {
-    
+public interface Cmando {
+    void AlmacenarRecursos();
 }

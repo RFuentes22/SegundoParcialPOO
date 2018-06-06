@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package robertofuentes.s.world.edificacion;
+package robertofuentes.s.world;
 
 /**
  *
  * @author R.Fuentes
  */
-public class BuildVe_tipo2 {
+public class Menu {
     
 }

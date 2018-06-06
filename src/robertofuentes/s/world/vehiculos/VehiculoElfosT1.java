@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package robertofuentes.s.world.edificacion;
+package robertofuentes.s.world.vehiculos;
 
 /**
  *
  * @author R.Fuentes
  */
-public class EntrenarMilicia {
-    
+public class VehiculoElfosT1 implements Vehiculo {
+    @Override
+    public void moverse() {
+        System.out.println("Vehiculo de elfos tipo 1");
+    }
 }
