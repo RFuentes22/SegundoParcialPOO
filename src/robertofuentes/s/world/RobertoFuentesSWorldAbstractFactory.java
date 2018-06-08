@@ -5,16 +5,21 @@
  */
 package robertofuentes.s.world;
 
-import robertofuentes.s.world.FactoryElfos.Elfos;
-import robertofuentes.s.world.FactoryOrcos.Orcos;
-import robertofuentes.s.world.FactoryZombies.Zombies;
 
-/**
- *
+/* *
  * @author R.Fuentes
  */
 public class RobertoFuentesSWorldAbstractFactory {
   
+     public static void main(String[] args) {
+      
+        
+       Menu menu=Menu.getInstance();
+       menu.opciones();
+    }
+    
+    
+    /**
     public static void main(String[] args) {
         AbstractFactory factory;
         //Elfos
@@ -39,7 +44,7 @@ public class RobertoFuentesSWorldAbstractFactory {
         
         Orcos BestiaMayor =factory.getOrcos("bestiamayor");
         BestiaMayor.ataque();
-        /**
+        
          //Zombies
         factory=FactoryProducer.getFactory("Zombies");
         Zombies ZombieMayor =factory.getZombies("ZombieMayor");
@@ -53,4 +58,4 @@ public class RobertoFuentesSWorldAbstractFactory {
         **/
     }
     
-}
+
