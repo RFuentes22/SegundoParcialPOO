@@ -12,98 +12,68 @@ import java.util.Scanner;
  * @author R.Fuentes
  */
 public class Menu {
+
     private static Menu menu;
 
     private Menu() {
     }
-    
-   public static Menu getInstance(){
-        if(menu==null){
-            menu=new Menu();
+
+    public static Menu getInstance() {
+        if (menu == null) {
+            menu = new Menu();
         }
         return menu;
     }
-    public void opciones(){
-        Scanner leer = new Scanner(System.in);
-       Player player1=new Player();
-       Player player2=new Player();
-       Player Razaplayer1=new Player();
-       Player Razaplayer2=new Player();
-       String nombre1=leer.nextLine(),nombre2=leer.nextLine(),raza=leer.nextLine();
-        while(true){    
-        int option=0;
-           while(option==0){
-            try{
-                 
-                System.out.println("");
-                System.out.println("Bienvenido a RobertoFuentes'World");
-                System.out.println("Ingrese su nombre (Jugador 1)");
-                player1.setNombre(nombre1);
-                System.out.println("Ingrese su nombre (Jugador 2)");
-                player2.setNombre(nombre2);
-                System.out.println("¿Que tipo de raza prefieres?" + (nombre1));
-                System.out.println("1- Orcos"
-                        + "2- Elfos"
-                        + "3- Zombies");
-                Razaplayer1.setNombre(raza);
-                System.out.println("¿Que tipo de raza prefieres?" + (nombre2));
-                System.out.println("1- Orcos"
-                        + "2- Elfos"
-                        + "3- Zombies");
-                Razaplayer2.setNombre(raza);
-                //option = Integer.parseInt(opcion);
+
+    public void opciones() {
+        Player player = new Player();
+        //while(true){    
+        //int option = 0;
+        //while(option==0){
+        try {
+
+            System.out.println("");
+            System.out.println("Bienvenido a RobertoFuentes'World");
+            System.out.println("Ingrese su nombre (Jugador 1)");
+            System.out.print("Introduzca: ");
+            Scanner leerNombre = new Scanner(System.in);
+            String nombre1 = leerNombre.next();
+            player.setNombre1(nombre1);
+            //player.MostrarNombre1();
+            System.out.println("Ingrese su nombre (Jugador 2)");
+            System.out.print("Introduzca: ");
+            String nombre2 = leerNombre.next();
+            player.setNombre2(nombre2);
+            //player.MostrarNombre2();
+            System.out.println("¿Que tipo de raza prefieres? " + player.getNombre1());
+            System.out.println("1- Orcos"
+                    + "\n2- Elfos"
+                    + "\n3- Zombies");
+            System.out.print("Introduzca: ");
+            Scanner leerRaza = new Scanner(System.in);
+            int RazaJ1 = leerRaza.nextInt();
+            player.setRazaJ1(RazaJ1);
+            //player.MostrarRazaJ1();
+            System.out.println("¿Que tipo de raza prefieres? " + player.getNombre2());
+            System.out.println("1- Orcos"
+                    + "\n2- Elfos"
+                    + "\n3- Zombies");
+            System.out.print("Introduzca: ");
+            int RazaJ2 = leerRaza.nextInt();
+            //Validacion que no sea igual que el player1
+            while (RazaJ2 == RazaJ1) {
+
+                System.out.println("No puede ser la misma raza que el jugador " + player.Nombre1 + " Intenta otra vez");
+                System.out.print("Introduzca: ");
+                RazaJ2 = leerRaza.nextInt();
             }
-            catch(Exception ex){
-                System.err.println("Error, Ingrese un Digito! /n");
-            }
-        }
-        /**
-        switch(option){
-            case 1: adminHotel.modificarPrecioDeHabitacion();
-            break;
-            case 2: adminHotel.modificarPiso();
-            break;
-            case 3: adminHotel.crearReservacion();
-            break;
-            case 4: 
-                System.out.println("Ingrese El ID de la Reservacion: ");
-                Scanner leerIdReservacion = new Scanner(System.in);
-                String id = leerIdReservacion.next();
-                int idReservacion = Integer.parseInt(id);
-               adminHotel.verReservacion(idReservacion);
-            break;
-            case 5: 
-                System.out.print("Ingrese Id de la Reservacion a Modificar: ");
-                Scanner leerIdReservacion2 = new Scanner(System.in);
-                String id2 = leerIdReservacion2.next();
-                int idReservacion2 = Integer.parseInt(id2);
-                adminHotel.modificarReservacion(idReservacion2);
-            break;
-            case 6: 
-                System.out.print("Ingrese Id de la Reservacion a Cancelar: ");
-                Scanner leerIdReservacion3 = new Scanner(System.in);
-                 int hol = leerIdReservacion3.nextInt();
-           
-                adminHotel.cancelarReservacion(hol);
-            break;
-            case 7: 
-                System.out.println("Reservaciones de la proxima semana");
-                System.out.println("--------------------------------------");
-                adminHotel.verReservacionesSemana();
-   
-            break;
-            case 8:
-                AdminPiso.MostrarHabitacionesDisponibles();
-                break;
-            case 9:
-                System.exit(0);
-                break;
-            default: System.err.println("Error, Ingrese una opcion valida!");
-            break;
+            player.setRazaJ2(RazaJ2);
+            //player.MostrarRazaJ2();
+
+        } catch (Exception ex) {
+            System.err.println("Error, Ingrese un Digito! ");
         }
         
     }
-    }**/
-}}}
-
+}
 
