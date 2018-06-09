@@ -11,7 +11,71 @@ package robertofuentes.s.world.Centro_Mando;
  */
 public class Cmando_Zombies implements Cmando {
     @Override
+    
     public void AlmacenarRecursos() {
         System.out.println("Centro de mando zombies");
+       
     }
+    private int oroZombies = 0, diamantesZombies = 0, estrellasZombies = 0;
+    private int limiteOro = 10000, limiteDiamantes = 5000, limiteEstrellas = 3000;
+    private int VidaCmando_Zombies = 50;
+
+    public int getOroZombies() {
+        return oroZombies;
+    }
+
+    public void setOroZombies(int oroZombies) {
+        this.oroZombies = oroZombies;
+    }
+
+    public int getDiamantesZombies() {
+        return diamantesZombies;
+    }
+
+    public void setDiamantesZombies(int diamantesZombies) {
+        this.diamantesZombies = diamantesZombies;
+    }
+
+    public int getEstrellasZombies() {
+        return estrellasZombies;
+    }
+
+    public void setEstrellasZombies(int estrellasZombies) {
+        this.estrellasZombies = estrellasZombies;
+    }
+
+    public int getLimiteOro() {
+        return limiteOro;
+    }
+
+    public void setLimiteOro(int limiteOro) {
+        this.limiteOro = limiteOro;
+    }
+
+    public int getLimiteDiamantes() {
+        return limiteDiamantes;
+    }
+
+    public void setLimiteDiamantes(int limiteDiamantes) {
+        this.limiteDiamantes = limiteDiamantes;
+    }
+
+    public int getLimiteEstrellas() {
+        return limiteEstrellas;
+    }
+
+    public void setLimiteEstrellas(int limiteEstrellas) {
+        this.limiteEstrellas = limiteEstrellas;
+    }
+
+    public int getVidaCmando_Zombies() {
+        return VidaCmando_Zombies;
+    }
+
+    public void setVidaCmando_Zombies(int VidaCmando_Zombies) {
+        this.VidaCmando_Zombies = VidaCmando_Zombies;
+    }
+    
+    
+    
 }

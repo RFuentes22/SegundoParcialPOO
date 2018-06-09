@@ -18,4 +18,23 @@ public class ReyElfo implements Elfos{
         System.out.println("ReyElfo defiende");
     }
     
+    private int vida = 20;
+    private int cantReyElfo = 1;
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public int getCantReyElfo() {
+        return cantReyElfo;
+    }
+
+    public void setCantReyElfo(int cantReyElfo) {
+        this.cantReyElfo = cantReyElfo;
+    }
+
 }

@@ -17,4 +17,25 @@ public class Mago implements Elfos{
      public void defiende() {
         System.out.println("mago defiende");
     }
+    private int vida = 10;
+    private int cantMagos = 1;
+
+    public int getCantMagos() {
+        return cantMagos;
+    }
+
+    public void setCantMagos(int cantMagos) {
+        this.cantMagos = cantMagos;
+    }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    
+    
 }

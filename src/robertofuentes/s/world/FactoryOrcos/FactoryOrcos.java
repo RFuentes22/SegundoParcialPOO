@@ -37,7 +37,7 @@ public class FactoryOrcos implements AbstractFactory {
     public Orcos getOrcos(String type) {
         switch (type) {
             case "lanzador":
-                return new lanzador();
+                return new Lanzador();
             case "hechicero":
                 return new Hechicero();
             case "bestiamayor":

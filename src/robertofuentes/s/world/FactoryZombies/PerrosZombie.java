@@ -21,5 +21,23 @@ public class PerrosZombie implements Zombies{
     public void defiende() {
          System.out.println("PerrosZombies defienden");
        }
+     private int vida = 10;
+    private int cantPerrosZombie = 1;
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public int getCantPerrosZombie() {
+        return cantPerrosZombie;
+    }
+
+    public void setCantPerrosZombie(int cantPerrosZombie) {
+        this.cantPerrosZombie = cantPerrosZombie;
+    }
     
 }

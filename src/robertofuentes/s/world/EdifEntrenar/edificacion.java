@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package robertofuentes.s.world.edificacion;
+package robertofuentes.s.world.EdifEntrenar;
 
 /**
  *
  * @author R.Fuentes
  */
-public class EntrenarUnidades {
-    
+public interface edificacion {
+ void recolectar();   
+ void generar();
+ void construir();
 }
+

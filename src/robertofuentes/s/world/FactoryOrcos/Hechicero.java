@@ -18,4 +18,23 @@ public class Hechicero implements Orcos{
         System.out.println("hechicero defiende");
     }
     
+     private int vida = 10;
+    private int cantHechicero = 1;
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public int getCantHechicero() {
+        return cantHechicero;
+    }
+
+    public void setCantHechicero(int cantHechicero) {
+        this.cantHechicero = cantHechicero;
+    }
+    
 }

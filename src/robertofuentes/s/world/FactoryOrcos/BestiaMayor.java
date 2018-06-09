@@ -10,13 +10,33 @@ package robertofuentes.s.world.FactoryOrcos;
  * @author R.Fuentes
  */
 public class BestiaMayor implements Orcos{
-    @Override
+   
+     @Override
     public void ataque() {
         System.out.println("BestiaMayor ataca");
     }
     @Override
     public void defiende() {
         System.out.println("BestiaMayor defiende");
+    }
+    
+    private int vida = 20;
+    private int cantBM = 1;
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public int getCantBM() {
+        return cantBM;
+    }
+
+    public void setCantBM(int cantBM) {
+        this.cantBM = cantBM;
     }
     
     

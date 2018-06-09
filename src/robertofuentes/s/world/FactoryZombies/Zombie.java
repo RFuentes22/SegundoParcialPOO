@@ -9,18 +9,18 @@ package robertofuentes.s.world.FactoryZombies;
  *
  * @author R.Fuentes
  */
-public class ZombieMayor implements Zombies{
+public class Zombie implements Zombies {
     @Override
     public void ataque() {
-        System.out.println("ZombieMayor ataca");
-    }
+         System.out.println("Zombies atacan");
+       }
     
     @Override
     public void defiende() {
-         System.out.println("ZombieMayor defiende");
+         System.out.println("Zombies defienden");
        }
-     private int vida = 20;
-    private int cantZM = 1;
+     private int vida = 10;
+    private int cantZombie = 1;
 
     public int getVida() {
         return vida;
@@ -30,12 +30,12 @@ public class ZombieMayor implements Zombies{
         this.vida = vida;
     }
 
-    public int getCantZM() {
-        return cantZM;
+    public int getCantZombie() {
+        return cantZombie;
     }
 
-    public void setCantZM(int cantZM) {
-        this.cantZM = cantZM;
+    public void setCantZombie(int cantZombie) {
+        this.cantZombie = cantZombie;
     }
     
     
