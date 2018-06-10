@@ -22,7 +22,7 @@ public class PerrosZombie implements Zombies{
          System.out.println("PerrosZombies defienden");
        }
      private int vida = 10;
-    private int cantPerrosZombie = 1;
+    private int cantPerrosZombie = 0;
 
     public int getVida() {
         return vida;

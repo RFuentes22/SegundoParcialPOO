@@ -21,7 +21,7 @@ public class Lanzador implements Orcos{
     }
     
     private int vida = 10;
-    private int cantLanzador = 1;
+    private int cantLanzador = 0;
 
     public int getVida() {
         return vida;

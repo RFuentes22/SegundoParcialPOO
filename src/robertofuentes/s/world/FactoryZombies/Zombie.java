@@ -20,7 +20,7 @@ public class Zombie implements Zombies {
          System.out.println("Zombies defienden");
        }
      private int vida = 10;
-    private int cantZombie = 1;
+    private int cantZombie = 0;
 
     public int getVida() {
         return vida;

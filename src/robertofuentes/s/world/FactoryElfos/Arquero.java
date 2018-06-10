@@ -21,7 +21,7 @@ public class Arquero implements Elfos {
         System.out.println("Arquero defiende");
     }
     private int vida = 10;
-    private int cantArqueros = 1;
+    private int cantArqueros = 0;
 
     public int getVida() {
         return vida;

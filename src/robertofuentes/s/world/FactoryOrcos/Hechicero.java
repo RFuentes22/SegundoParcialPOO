@@ -19,7 +19,7 @@ public class Hechicero implements Orcos{
     }
     
      private int vida = 10;
-    private int cantHechicero = 1;
+    private int cantHechicero = 0;
 
     public int getVida() {
         return vida;

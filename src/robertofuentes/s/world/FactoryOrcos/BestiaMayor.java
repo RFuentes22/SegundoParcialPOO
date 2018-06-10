@@ -21,7 +21,7 @@ public class BestiaMayor implements Orcos{
     }
     
     private int vida = 20;
-    private int cantBM = 1;
+    public int cantBM = 1;
 
     public int getVida() {
         return vida;

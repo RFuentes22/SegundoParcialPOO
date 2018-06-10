@@ -5,9 +5,13 @@
  */
 package robertofuentes.s.world;
 
+import java.util.Scanner;
 import robertofuentes.s.world.Centro_Mando.Cmando_Elfos;
 import robertofuentes.s.world.Centro_Mando.Cmando_Orcos;
 import robertofuentes.s.world.Centro_Mando.Cmando_Zombies;
+import robertofuentes.s.world.Edificaciones.Edificaciones;
+import robertofuentes.s.world.Edificaciones.EntrenarUnidadesJ1;
+import robertofuentes.s.world.Edificaciones.EntrenarUnidadesJ2;
 import robertofuentes.s.world.FactoryElfos.Arquero;
 import robertofuentes.s.world.FactoryElfos.Mago;
 import robertofuentes.s.world.FactoryElfos.ReyElfo;
@@ -23,7 +27,9 @@ import robertofuentes.s.world.FactoryZombies.ZombieMayor;
  * @author R.Fuentes
  */
 public class Player {
-  //Orcos
+//Instancias    
+    //Orcos
+
     Cmando_Orcos infoCmando_Orcos = new Cmando_Orcos();
     BestiaMayor infoBM = new BestiaMayor();
     Hechicero infoHech = new Hechicero();
@@ -38,9 +44,15 @@ public class Player {
     ZombieMayor infoZM = new ZombieMayor();
     PerrosZombie infoPZ = new PerrosZombie();
     Zombie infoZ = new Zombie();
-    private String Nombre1, Nombre2;
-    private int RazaJ1, RazaJ2;
+    //EntrenarUnidades
+    Edificaciones edifcaciones=new Edificaciones();
+    EntrenarUnidadesJ1 EntrenarUJ1 = new EntrenarUnidadesJ1();
+    EntrenarUnidadesJ2 EntrenarUJ2 = new EntrenarUnidadesJ2();
 
+    private String Nombre1=null, Nombre2=null;
+    private int RazaJ1=0, RazaJ2=0;
+   
+        
     public int getRazaJ1() {
         return RazaJ1;
     }
@@ -91,71 +103,251 @@ public class Player {
         System.out.println(RazaJ1);
     }
 
-    
     public void InformacionRazasJ1() {
 
-        
         switch (RazaJ1) {
             case 1:
                 System.out.println("Vida Centro de Mando: " + infoCmando_Orcos.getVidaCmando_Orcos()
                         + "\nOro: " + infoCmando_Orcos.getOroOrcos() + "  Diamantes: " + infoCmando_Orcos.getDiamantesOrcos() + "  Estrellas: " + infoCmando_Orcos.getEstrellasOrcos()
                         + "\nVida Bestia Mayor: " + infoBM.getVida() + "  Cantidad Bestia Mayor: " + infoBM.getCantBM()
-                        + "\nVida Hechicero: " + infoHech.getVida() + "  Cantidad Hechicero: " + infoHech.getCantHechicero()
-                        + "\nVida Lanzador: " + infoLanz.getVida() + "  Cantidad Lanzador: " + infoLanz.getCantLanzador());
+                        + "\nVida Hechicero: " + infoHech.getVida() * infoHech.getCantHechicero() + "  Cantidad Hechicero: " + infoHech.getCantHechicero()
+                        + "\nVida Lanzador: " + infoLanz.getVida() * infoLanz.getCantLanzador() + "  Cantidad Lanzador: " + infoLanz.getCantLanzador());
 
                 break;
             case 2:
 
                 System.out.println("Vida Centro de Mando: " + infoCmando_Elfos.getVidaCmando_Elfos()
                         + "\nOro: " + infoCmando_Elfos.getOroElfos() + "  Diamantes: " + infoCmando_Elfos.getDiamantesElfos() + "  Estrellas: " + infoCmando_Elfos.getEstrellasElfos()
-                        + "\nVida Arqueros: " + infoAr.getVida() + "  Cantidad Arqueros: " + infoAr.getCantArqueros()
-                        + "\nVida Magos: " + infoMag.getVida() + "  Cantidad Magos: " + infoMag.getCantMagos()
-                        + "\nVida Rey Elfo: " + infoElf.getVida() + "  Cantidad Rey Elfo: " + infoElf.getCantReyElfo());
+                        + "\nVida Rey Elfo: " + infoElf.getVida() + "  Cantidad Rey Elfo: " + infoElf.getCantReyElfo()
+                        + "\nVida Arqueros: " + infoAr.getVida() * infoAr.getCantArqueros() + "  Cantidad Arqueros: " + infoAr.getCantArqueros()
+                        + "\nVida Magos: " + infoMag.getVida() * infoMag.getCantMagos() + "  Cantidad Magos: " + infoMag.getCantMagos()
+                        );
 
                 break;
             case 3:
                 System.out.println("Vida Centro de Mando: " + infoCmando_Zombies.getVidaCmando_Zombies()
                         + "\nOro: " + infoCmando_Zombies.getOroZombies() + "  Diamantes: " + infoCmando_Zombies.getDiamantesZombies() + "  Estrellas: " + infoCmando_Zombies.getEstrellasZombies()
                         + "\nVida Zombie Mayor: " + infoZM.getVida() + "  Cantidad Zombie Mayor: " + infoZM.getCantZM()
-                        + "\nVida Perros Zombie: " + infoPZ.getVida() + "  Cantidad Perros Zombie: " + infoPZ.getCantPerrosZombie()
-                        + "\nVida Zombie: " + infoZ.getVida() + "  Cantidad zombie: " + infoZ.getCantZombie());
+                        + "\nVida Perros Zombie: " + infoPZ.getVida() * infoPZ.getCantPerrosZombie() + "  Cantidad Perros Zombie: " + infoPZ.getCantPerrosZombie()
+                        + "\nVida Zombie: " + infoZ.getVida() * infoZ.getCantZombie() + "  Cantidad zombie: " + infoZ.getCantZombie());
 
                 break;
 
-        }}
-       public void InformacionRazasJ2() {
+        }
+    }
 
+    public void InformacionRazasJ2() {
         
         switch (RazaJ2) {
             case 1:
                 System.out.println("Vida Centro de Mando: " + infoCmando_Orcos.getVidaCmando_Orcos()
                         + "\nOro: " + infoCmando_Orcos.getOroOrcos() + "  Diamantes: " + infoCmando_Orcos.getDiamantesOrcos() + "  Estrellas: " + infoCmando_Orcos.getEstrellasOrcos()
                         + "\nVida Bestia Mayor: " + infoBM.getVida() + "  Cantidad Bestia Mayor: " + infoBM.getCantBM()
-                        + "\nVida Hechicero: " + infoHech.getVida() + "  Cantidad Hechicero: " + infoHech.getCantHechicero()
-                        + "\nVida Lanzador: " + infoLanz.getVida() + "  Cantidad Lanzador: " + infoLanz.getCantLanzador());
+                        + "\nVida Hechicero: " + infoHech.getVida() * infoHech.getCantHechicero() + "  Cantidad Hechicero: " + infoHech.getCantHechicero()
+                        + "\nVida Lanzador: " + infoLanz.getVida() * infoLanz.getCantLanzador() + "  Cantidad Lanzador: " + infoLanz.getCantLanzador());
 
                 break;
             case 2:
 
                 System.out.println("Vida Centro de Mando: " + infoCmando_Elfos.getVidaCmando_Elfos()
                         + "\nOro: " + infoCmando_Elfos.getOroElfos() + "  Diamantes: " + infoCmando_Elfos.getDiamantesElfos() + "  Estrellas: " + infoCmando_Elfos.getEstrellasElfos()
-                        + "\nVida Arqueros: " + infoAr.getVida() + "  Cantidad Arqueros: " + infoAr.getCantArqueros()
-                        + "\nVida Magos: " + infoMag.getVida() + "  Cantidad Magos: " + infoMag.getCantMagos()
-                        + "\nVida Rey Elfo: " + infoElf.getVida() + "  Cantidad Rey Elfo: " + infoElf.getCantReyElfo());
+                        + "\nVida Rey Elfo: " + infoElf.getVida() + "  Cantidad Rey Elfo: " + infoElf.getCantReyElfo()
+                        + "\nVida Arqueros: " + infoAr.getVida() * infoAr.getCantArqueros() + "  Cantidad Arqueros: " + infoAr.getCantArqueros()
+                        + "\nVida Magos: " + infoMag.getVida() * infoMag.getCantMagos() + "  Cantidad Magos: " + infoMag.getCantMagos()
+                        );
 
                 break;
             case 3:
                 System.out.println("Vida Centro de Mando: " + infoCmando_Zombies.getVidaCmando_Zombies()
                         + "\nOro: " + infoCmando_Zombies.getOroZombies() + "  Diamantes: " + infoCmando_Zombies.getDiamantesZombies() + "  Estrellas: " + infoCmando_Zombies.getEstrellasZombies()
                         + "\nVida Zombie Mayor: " + infoZM.getVida() + "  Cantidad Zombie Mayor: " + infoZM.getCantZM()
-                        + "\nVida Perros Zombie: " + infoPZ.getVida() + "  Cantidad Perros Zombie: " + infoPZ.getCantPerrosZombie()
-                        + "\nVida Zombie: " + infoZ.getVida() + "  Cantidad zombie: " + infoZ.getCantZombie());
+                        + "\nVida Perros Zombie: " + infoPZ.getVida() *infoPZ.getCantPerrosZombie() + "  Cantidad Perros Zombie: " + infoPZ.getCantPerrosZombie()
+                        + "\nVida Zombie: " + infoZ.getVida() * infoZ.getCantZombie() + "  Cantidad zombie: " + infoZ.getCantZombie());
 
                 break;
 
         }
     }
+
+    public void opcionesJ1() {
+       
+        while (true) {
+            
+            System.out.println("\n¿Que desea hacer? " + Nombre1 + "\n");
+            InformacionRazasJ1();
+            //EntrenarUJ1.InformacionRazasJ1();
+            System.out.println("1- Atacar a " + Nombre2);
+            System.out.println("2- Entrenar Unidades ");
+            System.out.println("3- Comprar edificaciones ");
+            System.out.println("4- Comprar vehiculos");
+            System.out.println("5- Mejorar capacidad de Almacenamiento");
+            System.out.println("6- Terminar turno");
+            System.out.print("Introduzca: ");
+            Scanner leerOpc = new Scanner(System.in);
+
+            int Opc = leerOpc.nextInt();
+            switch (Opc) {
+                case 1:
+                    //AtacarToJ2();
+                    break;
+                case 2:
+                    if (EntrenarUJ1.isEstadoEdifEntrenarJ1() == true) {
+                        //EntrenarUJ1.EntrenarUnidadesJ1();
+                        EntrenarUnidadesJ1();
+                    } else {
+                        System.out.println("\nLa edificacion Entrenar no ha sido adquirida");
+                    }
+
+                    break;
+                case 3:
+                    edifcaciones.ComprarEdificaciones();
+                    break;
+                case 4:
+                    //ComprarVehiculosJ1();
+                    break;
+                case 5:
+                    //MejorarCapcidadJ1();
+                    break;
+                case 6:
+                    opcionesJ2();
+                    break;
+                default:
+                    System.out.println("\nIntroduzca opcion valida \n");
+                    opcionesJ1();
+                    break;
+            }
+        }
+    }
+
+    public void EntrenarUnidadesJ1() {
+
+        System.out.println("¿Cuantas unidades entrenar? ");
+        Scanner unid = new Scanner(System.in);
+        int uni = unid.nextInt();
+        switch (RazaJ1) {
+            case 1:
+
+                int cantHech = infoHech.getCantHechicero();
+                int cantLanz = infoLanz.getCantLanzador();
+
+                infoHech.setCantHechicero(cantHech += uni);
+                infoLanz.setCantLanzador(cantLanz += uni);
+
+                break;
+            case 2:
+                int cantAr = infoAr.getCantArqueros();
+                int cantMag = infoMag.getCantMagos();
+
+                infoAr.setCantArqueros(cantAr += uni);
+                infoMag.setCantMagos(cantMag += uni);
+                break;
+            case 3:
+                int cantZ = infoZ.getCantZombie();
+                int cantPZ = infoPZ.getCantPerrosZombie();
+
+                infoZ.setCantZombie(cantZ += uni);
+                infoPZ.setCantPerrosZombie(cantPZ += uni);
+                break;
+
+        }
+    }
+    public void EntrenarUnidadesJ2() {
+
+        System.out.println("¿Cuantas unidades entrenar? ");
+        Scanner unid2 = new Scanner(System.in);
+        int uni2 = unid2.nextInt();
+        switch (RazaJ2) {
+            case 1:
+
+                int cantHech = infoHech.getCantHechicero();
+                int cantLanz = infoLanz.getCantLanzador();
+
+                infoHech.setCantHechicero(cantHech += uni2);
+                infoLanz.setCantLanzador(cantLanz += uni2);
+
+                break;
+            case 2:
+                int cantAr = infoAr.getCantArqueros();
+                int cantMag = infoMag.getCantMagos();
+
+                infoAr.setCantArqueros(cantAr += uni2);
+                infoMag.setCantMagos(cantMag += uni2);
+                break;
+            case 3:
+                int cantZ = infoZ.getCantZombie();
+                int cantPZ = infoPZ.getCantPerrosZombie();
+
+                infoZ.setCantZombie(cantZ += uni2);
+                infoPZ.setCantPerrosZombie(cantPZ += uni2);
+                break;
+
+        }
+    }
+
+    public void opcionesJ2() {
+        while(true){
+        System.out.println("\n¿Que desea hacer? " + Nombre2);
+        InformacionRazasJ2();
+        System.out.println("1- Atacar a " + Nombre1);
+        System.out.println("2- Entrenar Unidades ");
+        System.out.println("3- Comprar edificaciones ");
+        System.out.println("4- Comprar vehiculos");
+        System.out.println("5- Mejorar capacidad de Almacenamiento");
+        System.out.println("6- Terminar turno");
+        System.out.print("Introduzca: ");
+        Scanner leerOpc = new Scanner(System.in);
+
+        int Opc = leerOpc.nextInt();
+        switch (Opc) {
+            case 1:
+                //AtacarToJ1();
+                break;
+            case 2:
+                  if (EntrenarUJ2.isEstadoEdifEntrenarJ2() == true) {
+                        //EntrenarUJ1.EntrenarUnidadesJ1();
+                        EntrenarUnidadesJ2();
+                    } else {
+                        System.out.println("\nLa edificacion Entrenar no ha sido adquirida");
+                    }
+                break;
+            case 3:
+                //ComprarEdificacionesJ2();
+                break;
+            case 4:
+                //ComprarVehiculosJ2();
+                break;
+            case 5:
+                //MejorarCapcidadJ2();
+                break;
+            case 6:
+                 opcionesJ1();
+                break;
+            default:
+                System.out.println("\nIntroduzca opcion valida \n");
+                opcionesJ2();
+                break;
+        }
+        }
+    }
+     
+    public void ModEstadoEntrenar(){
+      
+//        System.out.println(RJ1);
+     /**switch(RazaJ1){
+         case 1:
+             if(infoCmando_Orcos.getOroOrcos()>=200 && infoCmando_Orcos.getDiamantesOrcos()>=120){
+                 estadoEdifEntrenarJ1=true;
+                 System.out.println("Su compra ha sido satisfactoria");
+             }
+             else{
+                 System.out.println("No se ha podido completar su compra");
+             }
+             
+     
+     }**/
+     
     
-    
-    
+    }
+
+
 }
