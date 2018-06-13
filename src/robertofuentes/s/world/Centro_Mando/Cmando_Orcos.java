@@ -15,7 +15,7 @@ public class Cmando_Orcos implements Cmando {
         System.out.println("Centro de mando orcos");
         
     }
-    private int oroOrcos = 0, diamantesOrcos = 0, estrellasOrcos = 0;
+    private int oroOrcos = 1000, diamantesOrcos = 1500, estrellasOrcos = 1700;
     private int limiteOro = 10000, limiteDiamantes = 5000, limiteEstrellas = 3000;
     private int VidaCmando_Orcos = 50;
 

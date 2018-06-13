@@ -6,7 +6,7 @@
 package robertofuentes.s.world;
 
 import java.util.Scanner;
-import robertofuentes.s.world.Edificaciones.EntrenarUnidadesJ1;
+import robertofuentes.s.world.Edificaciones.CompEdificaciones;
 
 
 /**
@@ -28,7 +28,7 @@ public class Menu {
     }
     //Instancias
     Player player = new Player();
-    EntrenarUnidadesJ1 EntrenarUniJ1=new EntrenarUnidadesJ1();
+    CompEdificaciones EntrenarUniJ1=new CompEdificaciones();
     public void inicio() {
 
         try {

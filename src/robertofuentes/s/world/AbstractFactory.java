@@ -6,6 +6,7 @@
 package robertofuentes.s.world;
 
 import robertofuentes.s.world.Centro_Mando.Cmando;
+import robertofuentes.s.world.Edificaciones.Edificaciones;
 import robertofuentes.s.world.FactoryElfos.Elfos;
 import robertofuentes.s.world.FactoryOrcos.Orcos;
 import robertofuentes.s.world.FactoryZombies.Zombies;
@@ -23,5 +24,7 @@ public interface AbstractFactory {
     Cmando getCmando(String type);
     Vehiculo getVehiculos(String type);
     Recursos getRecursos(String type);
-    
+    Edificaciones getEdificaciones(String type);
+
+    public Vehiculo getVehiculo(String string);
 }

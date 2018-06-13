@@ -16,7 +16,7 @@ public class Cmando_Elfos implements Cmando {
         System.out.println("Centro de mando elfos");
 
     }
-    private int oroElfos = 0, diamantesElfos = 0, estrellasElfos = 0;
+    private int oroElfos = 1000, diamantesElfos = 1500, estrellasElfos = 1700;
     private int limiteOro = 10000, limiteDiamantes = 5000, limiteEstrellas = 3000;
     private int VidaCmando_Elfos = 50;
 

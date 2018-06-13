@@ -7,6 +7,7 @@ package robertofuentes.s.world.Recursos;
 
 import robertofuentes.s.world.AbstractFactory;
 import robertofuentes.s.world.Centro_Mando.Cmando;
+import robertofuentes.s.world.Edificaciones.Edificaciones;
 import robertofuentes.s.world.FactoryElfos.Elfos;
 import robertofuentes.s.world.FactoryOrcos.Orcos;
 import robertofuentes.s.world.FactoryZombies.Zombies;
@@ -43,6 +44,16 @@ public class FactoryRecursos implements AbstractFactory {
     @Override
     public Recursos getRecursos(String type) {
        return null;
+    }
+
+    @Override
+    public Edificaciones getEdificaciones(String type) {
+       return null;
+    }
+
+    @Override
+    public Vehiculo getVehiculo(String string) {
+        return null;
     }
    
 }

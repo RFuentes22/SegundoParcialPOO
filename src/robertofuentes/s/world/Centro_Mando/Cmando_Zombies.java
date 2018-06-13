@@ -16,7 +16,7 @@ public class Cmando_Zombies implements Cmando {
         System.out.println("Centro de mando zombies");
        
     }
-    private int oroZombies = 0, diamantesZombies = 0, estrellasZombies = 0;
+    private int oroZombies = 1000, diamantesZombies = 1500, estrellasZombies = 1700;
     private int limiteOro = 10000, limiteDiamantes = 5000, limiteEstrellas = 3000;
     private int VidaCmando_Zombies = 50;
 

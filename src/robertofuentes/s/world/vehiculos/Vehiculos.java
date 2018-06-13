@@ -3,13 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package robertofuentes.s.world.Edificaciones;
+package robertofuentes.s.world.vehiculos;
 
 /**
  *
  * @author R.Fuentes
  */
+public class Vehiculos implements Vehiculo {
 
-public interface Edificaciones  {
-    void Edificar();
+    @Override
+    public void moverse() {
+     
+    }
+  
+   
 }

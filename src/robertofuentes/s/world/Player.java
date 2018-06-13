@@ -9,9 +9,7 @@ import java.util.Scanner;
 import robertofuentes.s.world.Centro_Mando.Cmando_Elfos;
 import robertofuentes.s.world.Centro_Mando.Cmando_Orcos;
 import robertofuentes.s.world.Centro_Mando.Cmando_Zombies;
-import robertofuentes.s.world.Edificaciones.Edificaciones;
-import robertofuentes.s.world.Edificaciones.EntrenarUnidadesJ1;
-import robertofuentes.s.world.Edificaciones.EntrenarUnidadesJ2;
+import robertofuentes.s.world.Edificaciones.CompEdificaciones;
 import robertofuentes.s.world.FactoryElfos.Arquero;
 import robertofuentes.s.world.FactoryElfos.Mago;
 import robertofuentes.s.world.FactoryElfos.ReyElfo;
@@ -44,15 +42,14 @@ public class Player {
     ZombieMayor infoZM = new ZombieMayor();
     PerrosZombie infoPZ = new PerrosZombie();
     Zombie infoZ = new Zombie();
-    //EntrenarUnidades
-    Edificaciones edifcaciones=new Edificaciones();
-    EntrenarUnidadesJ1 EntrenarUJ1 = new EntrenarUnidadesJ1();
-    EntrenarUnidadesJ2 EntrenarUJ2 = new EntrenarUnidadesJ2();
+    //Edificaciones
+    CompEdificaciones EntrenarU = new CompEdificaciones();
+    //Abstract
+    AbstractFactory factory;
 
-    private String Nombre1=null, Nombre2=null;
-    private int RazaJ1=0, RazaJ2=0;
-   
-        
+    private String Nombre1 = null, Nombre2 = null;
+    private int RazaJ1 = 0, RazaJ2 = 0;
+
     public int getRazaJ1() {
         return RazaJ1;
     }
@@ -85,24 +82,7 @@ public class Player {
         this.Nombre2 = Nombre2;
     }
 
-    //Mostrar
-    public void MostrarNombre1() {
-        System.out.println(Nombre1);
-
-    }
-
-    public void MostrarNombre2() {
-        System.out.println(Nombre2);
-    }
-
-    public void MostrarRazaJ1() {
-        System.out.println(RazaJ1);
-    }
-
-    public void MostrarRazaJ2() {
-        System.out.println(RazaJ1);
-    }
-
+    //Informacion Razas
     public void InformacionRazasJ1() {
 
         switch (RazaJ1) {
@@ -121,7 +101,7 @@ public class Player {
                         + "\nVida Rey Elfo: " + infoElf.getVida() + "  Cantidad Rey Elfo: " + infoElf.getCantReyElfo()
                         + "\nVida Arqueros: " + infoAr.getVida() * infoAr.getCantArqueros() + "  Cantidad Arqueros: " + infoAr.getCantArqueros()
                         + "\nVida Magos: " + infoMag.getVida() * infoMag.getCantMagos() + "  Cantidad Magos: " + infoMag.getCantMagos()
-                        );
+                );
 
                 break;
             case 3:
@@ -137,7 +117,7 @@ public class Player {
     }
 
     public void InformacionRazasJ2() {
-        
+
         switch (RazaJ2) {
             case 1:
                 System.out.println("Vida Centro de Mando: " + infoCmando_Orcos.getVidaCmando_Orcos()
@@ -154,14 +134,14 @@ public class Player {
                         + "\nVida Rey Elfo: " + infoElf.getVida() + "  Cantidad Rey Elfo: " + infoElf.getCantReyElfo()
                         + "\nVida Arqueros: " + infoAr.getVida() * infoAr.getCantArqueros() + "  Cantidad Arqueros: " + infoAr.getCantArqueros()
                         + "\nVida Magos: " + infoMag.getVida() * infoMag.getCantMagos() + "  Cantidad Magos: " + infoMag.getCantMagos()
-                        );
+                );
 
                 break;
             case 3:
                 System.out.println("Vida Centro de Mando: " + infoCmando_Zombies.getVidaCmando_Zombies()
                         + "\nOro: " + infoCmando_Zombies.getOroZombies() + "  Diamantes: " + infoCmando_Zombies.getDiamantesZombies() + "  Estrellas: " + infoCmando_Zombies.getEstrellasZombies()
                         + "\nVida Zombie Mayor: " + infoZM.getVida() + "  Cantidad Zombie Mayor: " + infoZM.getCantZM()
-                        + "\nVida Perros Zombie: " + infoPZ.getVida() *infoPZ.getCantPerrosZombie() + "  Cantidad Perros Zombie: " + infoPZ.getCantPerrosZombie()
+                        + "\nVida Perros Zombie: " + infoPZ.getVida() * infoPZ.getCantPerrosZombie() + "  Cantidad Perros Zombie: " + infoPZ.getCantPerrosZombie()
                         + "\nVida Zombie: " + infoZ.getVida() * infoZ.getCantZombie() + "  Cantidad zombie: " + infoZ.getCantZombie());
 
                 break;
@@ -169,13 +149,14 @@ public class Player {
         }
     }
 
+    //Opciones Jugadores
     public void opcionesJ1() {
-       
+
         while (true) {
-            
+
             System.out.println("\n¿Que desea hacer? " + Nombre1 + "\n");
             InformacionRazasJ1();
-            //EntrenarUJ1.InformacionRazasJ1();
+
             System.out.println("1- Atacar a " + Nombre2);
             System.out.println("2- Entrenar Unidades ");
             System.out.println("3- Comprar edificaciones ");
@@ -191,8 +172,9 @@ public class Player {
                     //AtacarToJ2();
                     break;
                 case 2:
-                    if (EntrenarUJ1.isEstadoEdifEntrenarJ1() == true) {
-                        //EntrenarUJ1.EntrenarUnidadesJ1();
+
+                    if (EntrenarU.getEstadoEdifEntrenarJ1() == 1) {
+                        //EntrenarUJ1.CompEdificaciones(RazaJ1);
                         EntrenarUnidadesJ1();
                     } else {
                         System.out.println("\nLa edificacion Entrenar no ha sido adquirida");
@@ -200,10 +182,18 @@ public class Player {
 
                     break;
                 case 3:
-                    edifcaciones.ComprarEdificaciones();
+                    EntrenarU.ComprarEdificacionesJ1(RazaJ1);
                     break;
                 case 4:
-                    //ComprarVehiculosJ1();
+
+                    if (EntrenarU.getEstadoEdifVehiculosJ1() == 1) {
+                      
+                        System.out.println("comprado");
+                      
+                    } else {
+                        System.out.println("\nLa edificacion para comprar Vehiculos no ha sido adquirida");
+                    }
+
                     break;
                 case 5:
                     //MejorarCapcidadJ1();
@@ -219,6 +209,59 @@ public class Player {
         }
     }
 
+    public void opcionesJ2() {
+        while (true) {
+            System.out.println("\n¿Que desea hacer? " + Nombre2);
+            InformacionRazasJ2();
+            System.out.println("1- Atacar a " + Nombre1);
+            System.out.println("2- Entrenar Unidades ");
+            System.out.println("3- Comprar edificaciones ");
+            System.out.println("4- Comprar vehiculos");
+            System.out.println("5- Mejorar capacidad de Almacenamiento");
+            System.out.println("6- Terminar turno");
+            System.out.print("Introduzca: ");
+            Scanner leerOpc = new Scanner(System.in);
+
+            int Opc = leerOpc.nextInt();
+            switch (Opc) {
+                case 1:
+                    //AtacarToJ1();
+                    break;
+                case 2:
+                    if (EntrenarU.getEstadoEdifEntrenarJ2() == 1) {
+                        //EntrenarUJ1.CompEdificaciones();
+                        EntrenarUnidadesJ2();
+                    } else {
+                        System.out.println("\nLa edificacion Entrenar no ha sido adquirida");
+                    }
+                    break;
+                case 3:
+                    EntrenarU.ComprarEdificacionesJ2(RazaJ2);
+                    break;
+                case 4:
+                      if (EntrenarU.getEstadoEdifVehiculosJ2() == 1) {
+                      
+                        System.out.println("comprado");
+                      
+                    } else {
+                        System.out.println("\nLa edificacion para comprar Vehiculos no ha sido adquirida");
+                    }
+                    break;
+                case 5:
+                    //MejorarCapcidadJ2();
+                    break;
+                case 6:
+                    opcionesJ1();
+                    break;
+                default:
+                    System.out.println("\nIntroduzca opcion valida \n");
+                    opcionesJ2();
+                    break;
+            }
+        }
+    }
+
+    //Entrenar Unidades
     public void EntrenarUnidadesJ1() {
 
         System.out.println("¿Cuantas unidades entrenar? ");
@@ -251,6 +294,7 @@ public class Player {
 
         }
     }
+
     public void EntrenarUnidadesJ2() {
 
         System.out.println("¿Cuantas unidades entrenar? ");
@@ -283,71 +327,5 @@ public class Player {
 
         }
     }
-
-    public void opcionesJ2() {
-        while(true){
-        System.out.println("\n¿Que desea hacer? " + Nombre2);
-        InformacionRazasJ2();
-        System.out.println("1- Atacar a " + Nombre1);
-        System.out.println("2- Entrenar Unidades ");
-        System.out.println("3- Comprar edificaciones ");
-        System.out.println("4- Comprar vehiculos");
-        System.out.println("5- Mejorar capacidad de Almacenamiento");
-        System.out.println("6- Terminar turno");
-        System.out.print("Introduzca: ");
-        Scanner leerOpc = new Scanner(System.in);
-
-        int Opc = leerOpc.nextInt();
-        switch (Opc) {
-            case 1:
-                //AtacarToJ1();
-                break;
-            case 2:
-                  if (EntrenarUJ2.isEstadoEdifEntrenarJ2() == true) {
-                        //EntrenarUJ1.EntrenarUnidadesJ1();
-                        EntrenarUnidadesJ2();
-                    } else {
-                        System.out.println("\nLa edificacion Entrenar no ha sido adquirida");
-                    }
-                break;
-            case 3:
-                //ComprarEdificacionesJ2();
-                break;
-            case 4:
-                //ComprarVehiculosJ2();
-                break;
-            case 5:
-                //MejorarCapcidadJ2();
-                break;
-            case 6:
-                 opcionesJ1();
-                break;
-            default:
-                System.out.println("\nIntroduzca opcion valida \n");
-                opcionesJ2();
-                break;
-        }
-        }
-    }
-     
-    public void ModEstadoEntrenar(){
-      
-//        System.out.println(RJ1);
-     /**switch(RazaJ1){
-         case 1:
-             if(infoCmando_Orcos.getOroOrcos()>=200 && infoCmando_Orcos.getDiamantesOrcos()>=120){
-                 estadoEdifEntrenarJ1=true;
-                 System.out.println("Su compra ha sido satisfactoria");
-             }
-             else{
-                 System.out.println("No se ha podido completar su compra");
-             }
-             
-     
-     }**/
-     
-    
-    }
-
 
 }
