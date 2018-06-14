@@ -39,18 +39,7 @@ public class FactoryVehiculo implements AbstractFactory {
      @Override
     public Vehiculo getVehiculos(String type) {
         switch (type) {
-            case "Vehiculo de elfos tipo 1":
-                return new VehiculoElfosT1();
-            case "Vehiculo de elfos tipo 2":
-                return new VehiculoElfosT2();
-            case "Vehiculo de orcos tipo 1":
-                return new VehiculoOrcosT1();
-            case "Vehiculo de orcos tipo 2":
-                return new VehiculoOrcosT2();
-            case "Vehiculo de zombies tipo 1":
-                return new VehiculoZombiesT1();
-            case "Vehiculo de zombies tipo 2":
-                return new VehiculoZombiesT2();
+        
                    
             
         }

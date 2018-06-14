@@ -18,17 +18,7 @@ public class RobertoFuentesSWorldAbstractFactory {
        menu.inicio();
         
     }
-    
-    
-    /**
-    public static void main(String[] args) {
-        AbstractFactory factory;
-        //Elfos
-        factory=FactoryProducer.getFactory("elfos");
-        Elfos Arquero =factory.getElfos("arquero");
-        Arquero.ataque();
    
-        **/
     }
     
 
