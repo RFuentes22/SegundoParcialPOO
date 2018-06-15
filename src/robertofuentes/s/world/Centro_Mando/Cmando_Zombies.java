@@ -19,7 +19,7 @@ public class Cmando_Zombies implements Cmando {
     private int oroZombies = 1000, diamantesZombies = 1500, estrellasZombies = 1700;
     private int limiteOro = 10000, limiteDiamantes = 5000, limiteEstrellas = 3000;
     private int VidaCmando_Zombies = 50;
-
+    private int mejoraZombies=0;
     public int getOroZombies() {
         return oroZombies;
     }
@@ -74,6 +74,14 @@ public class Cmando_Zombies implements Cmando {
 
     public void setVidaCmando_Zombies(int VidaCmando_Zombies) {
         this.VidaCmando_Zombies = VidaCmando_Zombies;
+    }
+
+    public int getMejoraZombies() {
+        return mejoraZombies;
+    }
+
+    public void setMejoraZombies(int mejoraZombies) {
+        this.mejoraZombies = mejoraZombies;
     }
     
     

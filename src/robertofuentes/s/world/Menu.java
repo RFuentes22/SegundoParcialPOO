@@ -6,7 +6,7 @@
 package robertofuentes.s.world;
 
 import java.util.Scanner;
-import robertofuentes.s.world.Edificaciones.Compras;
+import robertofuentes.s.world.Edificaciones.Logic;
 
 
 /**
@@ -28,7 +28,7 @@ public class Menu {
     }
     //Instancias
     Player player = new Player();
-    Compras EntrenarUniJ1=new Compras();
+    Logic EntrenarUniJ1=new Logic();
     public void inicio() {
 
         try {

@@ -6,7 +6,7 @@
 package robertofuentes.s.world;
 
 import java.util.Scanner;
-import robertofuentes.s.world.Edificaciones.Compras;
+import robertofuentes.s.world.Edificaciones.Logic;
 import robertofuentes.s.world.vehiculos.Vehiculos;
 
 /**
@@ -15,9 +15,9 @@ import robertofuentes.s.world.vehiculos.Vehiculos;
  */
 public class Player {
 //Instancias    
- 
+
     //Edificaciones
-    Compras CompEdif = new Compras();
+    Logic Comp = new Logic();
     //Vehiculos
     Vehiculos vehiculos = new Vehiculos();
     //Abstract
@@ -64,14 +64,13 @@ public class Player {
         while (true) {
 
             System.out.println("\n¿Que desea hacer? " + Nombre1 + "\n");
-
-            CompEdif.InformacionRazasJ1(RazaJ1);
             System.out.println("1- Atacar a " + Nombre2);
             System.out.println("2- Entrenar Unidades ");
             System.out.println("3- Comprar edificaciones ");
             System.out.println("4- Comprar vehiculos");
             System.out.println("5- Mejorar capacidad de Almacenamiento");
-            System.out.println("6- Terminar turno");
+            System.out.println("6- Estado ");
+            System.out.println("7- Terminar turno");
             System.out.print("Introduzca: ");
             Scanner leerOpc = new Scanner(System.in);
 
@@ -82,8 +81,8 @@ public class Player {
                     break;
                 case 2:
 
-                    if (CompEdif.getEstadoEdifEntrenarJ1() == 1) {
-                        CompEdif.EntrenarUnidadesJ1(RazaJ1);
+                    if (Comp.getEstadoEdifEntrenarJ1() == 1) {
+                        Comp.EntrenarUnidadesJ1(RazaJ1);
 
                     } else {
                         System.out.println("\nLa edificacion Entrenar no ha sido adquirida");
@@ -91,12 +90,12 @@ public class Player {
 
                     break;
                 case 3:
-                    CompEdif.ComprarEdificacionesJ1(RazaJ1);
+                    Comp.ComprarEdificacionesJ1(RazaJ1);
                     break;
                 case 4:
 
-                    if (CompEdif.getEstadoEdifVehiculosJ1() == 1) {
-                        CompEdif.CompraVehiculosJ1(RazaJ1);
+                    if (Comp.getEstadoEdifVehiculosJ1() == 1) {
+                        Comp.CompraVehiculosJ1(RazaJ1);
 
                     } else {
                         System.out.println("\nLa edificacion para comprar Vehiculos no ha sido adquirida");
@@ -104,9 +103,12 @@ public class Player {
 
                     break;
                 case 5:
-                    //MejorarCapcidadJ1();
+                    Comp.MejorarC_MandoJ1(RazaJ1);
                     break;
                 case 6:
+                    Comp.InformacionRazasJ1(RazaJ1);
+                    break;
+                case 7:
                     opcionesJ2();
                     break;
                 default:
@@ -119,14 +121,14 @@ public class Player {
 
     public void opcionesJ2() {
         while (true) {
-            System.out.println("\n¿Que desea hacer? " + Nombre2);
-            CompEdif.InformacionRazasJ2(RazaJ2);
+            System.out.println("\n¿Que desea hacer? " + Nombre2 + "\n");
             System.out.println("1- Atacar a " + Nombre1);
             System.out.println("2- Entrenar Unidades ");
             System.out.println("3- Comprar edificaciones ");
             System.out.println("4- Comprar vehiculos");
             System.out.println("5- Mejorar capacidad de Almacenamiento");
-            System.out.println("6- Terminar turno");
+            System.out.println("6- Estado");
+            System.out.println("7- Terminar turno");
             System.out.print("Introduzca: ");
             Scanner leerOpc = new Scanner(System.in);
 
@@ -136,19 +138,19 @@ public class Player {
                     //AtacarToJ1();
                     break;
                 case 2:
-                    if (CompEdif.getEstadoEdifEntrenarJ2() == 1) {
+                    if (Comp.getEstadoEdifEntrenarJ2() == 1) {
 
-                        CompEdif.EntrenarUnidadesJ2(RazaJ2);
+                        Comp.EntrenarUnidadesJ2(RazaJ2);
                     } else {
                         System.out.println("\nLa edificacion Entrenar no ha sido adquirida");
                     }
                     break;
                 case 3:
-                    CompEdif.ComprarEdificacionesJ2(RazaJ2);
+                    Comp.ComprarEdificacionesJ2(RazaJ2);
                     break;
                 case 4:
-                    if (CompEdif.getEstadoEdifVehiculosJ2() == 1) {
-                        CompEdif.CompraVehiculosJ2(RazaJ2);
+                    if (Comp.getEstadoEdifVehiculosJ2() == 1) {
+                        Comp.CompraVehiculosJ2(RazaJ2);
 
                     } else {
                         System.out.println("\nLa edificacion para comprar Vehiculos no ha sido adquirida");
@@ -156,9 +158,12 @@ public class Player {
 
                     break;
                 case 5:
-                    //MejorarCapcidadJ2();
+                    Comp.MejorarC_MandoJ2(RazaJ2);
                     break;
                 case 6:
+                    Comp.InformacionRazasJ2(RazaJ2);
+                    break;
+                case 7:
                     opcionesJ1();
                     break;
                 default:

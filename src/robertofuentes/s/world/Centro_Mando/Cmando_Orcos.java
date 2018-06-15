@@ -18,7 +18,7 @@ public class Cmando_Orcos implements Cmando {
     private int oroOrcos = 1000, diamantesOrcos = 1500, estrellasOrcos = 1700;
     private int limiteOro = 10000, limiteDiamantes = 5000, limiteEstrellas = 3000;
     private int VidaCmando_Orcos = 50;
-
+    private int mejoraOrcos=0;
     public int getOroOrcos() {
         return oroOrcos;
     }
@@ -73,6 +73,14 @@ public class Cmando_Orcos implements Cmando {
 
     public void setVidaCmando_Orcos(int VidaCmando_Orcos) {
         this.VidaCmando_Orcos = VidaCmando_Orcos;
+    }
+
+    public int getMejoraOrcos() {
+        return mejoraOrcos;
+    }
+
+    public void setMejoraOrcos(int mejoraOrcos) {
+        this.mejoraOrcos = mejoraOrcos;
     }
     
     

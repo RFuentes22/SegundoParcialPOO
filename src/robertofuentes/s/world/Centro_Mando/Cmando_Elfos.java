@@ -19,7 +19,7 @@ public class Cmando_Elfos implements Cmando {
     private int oroElfos = 1000, diamantesElfos = 1500, estrellasElfos = 1700;
     private int limiteOro = 10000, limiteDiamantes = 5000, limiteEstrellas = 3000;
     private int VidaCmando_Elfos = 50;
-
+    private int mejoraElfos=0;
     public int getVidaCmando_Elfos() {
         return VidaCmando_Elfos;
     }
@@ -74,6 +74,15 @@ public class Cmando_Elfos implements Cmando {
 
     public void setLimiteEstrellas(int limiteEstrellas) {
         this.limiteEstrellas = limiteEstrellas;
+    }
+
+   
+    public int getMejoraElfos() {
+        return mejoraElfos;
+    }
+
+    public void setMejoraElfos(int mejoraElfos) {
+        this.mejoraElfos = mejoraElfos;
     }
 
 }

@@ -54,7 +54,7 @@ public class FactoryEdificaciones implements AbstractFactory{
     public Edificaciones getEdificaciones(String type) {
         switch (type) {
             case "Edificacion entrenar J1":
-                return new Compras();
+                return new Logic();
             
         }
         return null;

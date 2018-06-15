@@ -9,7 +9,7 @@ import java.util.Scanner;
 import robertofuentes.s.world.Centro_Mando.Cmando_Elfos;
 import robertofuentes.s.world.Centro_Mando.Cmando_Orcos;
 import robertofuentes.s.world.Centro_Mando.Cmando_Zombies;
-import robertofuentes.s.world.Edificaciones.Compras;
+import robertofuentes.s.world.Edificaciones.Logic;
 import robertofuentes.s.world.FactoryElfos.Arquero;
 import robertofuentes.s.world.FactoryElfos.Mago;
 import robertofuentes.s.world.FactoryElfos.ReyElfo;
@@ -44,7 +44,7 @@ public class Vehiculos implements Vehiculo {
     //Vehiculos
     VehiculoOrcos vehiculosOrc = new VehiculoOrcos();
 
-   // Compras compedf = new Compras();
+   // Logic compedf = new Logic();
 
 
 
